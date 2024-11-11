@@ -84,12 +84,26 @@ def lsn():
         s(2)
         lsn()
 
-def main():
-    pass
+def hub():
+    logo()
+    userinp = int(input("Welcome to textbasedrpg! please type '1' to open the command list! (or type 99 to close the game.): "))
 
+    #all of the if's
+    if userinp == 1:
+        selectionmenu()
+    elif userinp == 99:
+        print("Cya")
+        s(1)
+        clear()
+        sys.exit()
+    else:
+        print("Invalid selection")
+        s(1)
+        hub()
+    
 def login():
     global name, xp, maxxp, level, dmg, hp, maxhp, dfn, maxdfn, luck, mp, maxmp, helm, chest, legs, wpn, helmdfn, chestdfn, legsdnf, wpndmg
-    with open('save.xyz', 'r') as file:
+    with open('svc.xyz', 'r') as file:
         name, xp, maxxp, level, dmg, hp, maxhp, dfn, maxdfn, luck, mp, maxmp, helm, chest, legs, wpn, helmdfn, chestdfn, legsdnf, wpndmg = file.read().split(',')
         name = str(name)
         xp = int(xp)
@@ -111,7 +125,7 @@ def login():
         chestdfn = int(chestdfn)
         legsdnf = int(legsdnf)
         wpndmg = int(wpndmg)
-    main()
+    hub()
 
 def signup():
     global name, xp, maxxp, level, dmg, hp, maxhp, dfn, maxdfn, luck, mp, maxmp, helm, chest, legs, wpn, helmdfn, chestdfn, legsdnf, wpndmg
@@ -136,10 +150,10 @@ def signup():
     legsdnf = 0
     wpndmg = 0
     save()
-    main()
+    hub()
 
 def save():
-    with open('save.xyz', 'w') as file:
+    with open('svc.xyz', 'w') as file:
         file.write(f"{name},{xp},{maxxp},{level},{dmg},{hp},{maxhp},{dfn},{maxdfn},{luck},{mp},{maxmp},{helm},{chest},{legs},{wpn},{helmdfn},{chestdfn},{legsdnf},{wpndmg}")
 
 def loading():
@@ -159,5 +173,34 @@ def loading():
         print("Loading...")
         s(.2)
         randamt = randamt - 1
+
+def selectionmenu():
+    logo()
+    print(f"-------------\nSelection Menu\n---------------\n1. Closes the selection menu\n2. Opens the game\n3. Opens the Stats Menu\n4. Saves You're Game.\n5. [doesnt exist]")
+    userinp = int(input("Selection Menu: "))
+
+    #ifs
+    if userinp == 1:
+        hub()
+    elif userinp == 2:
+        game()
+    elif userinp == 3:
+        stats()
+    elif userinp == 4:
+        save()
+        print("Game Saved")
+        s(2)
+        selectionmenu()
+    else:
+        print("That does not exist, Sorry.")
+        s(2)
+        selectionmenu()
+
+def game():
+    pass
+
+def stats():
+    pass
+
 
 lsn()
