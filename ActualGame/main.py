@@ -233,57 +233,52 @@ def stlvl():
     save()
     logo()
     print(f"-------------------\nLevel Up Your Stats\n-------------------\n1. HP {maxhp}\n2. Defence {maxdfn}\n3. Mana {maxmp}\n4. Damage {dmg}\n5. Luck {luck}\n-------------------\nRemaining Statpoints: {stp}\n-------------------")
-    userinp = int(input("Type a Number (1-5) to increase a stat or type (99) to exit: "))
-
-    if userinp == 1:
-        stp = stp - 1
-        usedheal = usedheal + 1
-        maxhp = int(maxhp + (1 * (usedheal/2)))
-        stlvl()
-
-    elif userinp == 2:
-        stp = stp - 1
-        useddfn = useddfn + 1
-        maxdfn = int(maxdfn + (1 * (useddfn/2)))
-        stlvl()
-
-    elif userinp == 3:
-        stp = stp - 1
-        usedmp = usedmp + 1
-        maxmp = int(maxmp + (1 * (usedmp/2)))
-        stlvl()
-
-    elif userinp == 4:
-        stp = stp - 1
-        useddmg = useddmg + 1
-        dmg = int(dmg + (1 * (useddmg/2)))
-        stlvl()
-
-    elif userinp == 5:
-        stp = stp - 1
-        usedluck = usedluck + 1
-        luck = int(luck + (1 * (usedluck/2)))
-        stlvl()
-
-    elif userinp == 99:
-        stats()
     
-    elif not userinp.lstrip('-').isdigit():
-        save()
-        print("You almost lost your save.")
-        s(2)
-        print("to prevent the almost loss of your save type a number next time.")
-        s(1)
-        print("I saved your stuff so once this dissaperes, you're good, if you close it before then, your save file is cooked")
-        s(3)
-        print("properly saved")
-        s(.2)
-        stlvl()
+    if stp > 0:
+        userinp = input("Type a Number (1-5) to increase a stat or type (99) to exit: ")
 
+        if userinp == "1":
+            stp = stp - 1
+            usedheal = usedheal + 1
+            maxhp = int(maxhp + (1 * (usedheal/2)))
+            stlvl()
+
+        elif userinp == "2":
+            stp = stp - 1
+            useddfn = useddfn + 1
+            maxdfn = int(maxdfn + (1 * (useddfn/2)))
+            stlvl()
+
+        elif userinp == "3":
+            stp = stp - 1
+            usedmp = usedmp + 1
+            maxmp = int(maxmp + (1 * (usedmp/2)))
+            stlvl()
+
+        elif userinp == "4":
+            stp = stp - 1
+            useddmg = useddmg + 1
+            dmg = int(dmg + (1 * (useddmg/2)))
+            stlvl()
+
+        elif userinp == "5":
+            stp = stp - 1
+            usedluck = usedluck + 1
+            luck = int(luck + (1 * (usedluck/2)))
+            stlvl()
+
+        elif userinp == "99":
+            stats()
+        
+        else:
+            print("That isnt a valid Input")
+            save()
+            s(2)
+            stlvl()
     else:
-        print("That isnt a valid Input")
-        save()
-        s(2)
-        stlvl()
+        print("You dont have any statpoints to use.")
+        print("type anything to contenue")
+        userinp = input("")
+        stats()
 
 lsn()
