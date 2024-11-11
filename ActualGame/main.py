@@ -5,6 +5,11 @@ from os import system, name
 from time import sleep as s
 import random as r
 
+#Clears all variables on start (defines them)
+userinp = 0
+randamt = 0
+
+
 # All of the defines
 def clear():
     # for windows
@@ -55,6 +60,9 @@ def login():
 def signup():
     pass
 
+def save():
+    pass
+
 def loading():
     if randamt != 0:
         randamt = 0
@@ -73,6 +81,7 @@ def loading():
         s(.2)
         randamt = randamt - 1
 
-#The perminate save/load loop.
-while 1:
-    pass
+
+lsn()
+
+
