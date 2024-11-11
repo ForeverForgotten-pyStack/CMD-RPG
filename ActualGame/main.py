@@ -6,9 +6,42 @@ from time import sleep as s
 import random as r
 
 #Clears all variables on start (defines them)
+#this is for loading and input cmds
 userinp = 0
 randamt = 0
 
+#This is all of your armor, exp, level, dmg, hp, etc
+name = 0
+xp = 0
+maxxp = 0
+level = 0
+dmg = 0
+hp = 0
+maxhp = 0
+dfn = 0
+maxdfn = 0
+luck = 0
+mp = 0
+maxmp = 0
+
+#Your inventory and equips
+helm = 0
+chest = 0
+legs = 0
+wpn = 0
+helmdfn = 0
+chestdfn = 0
+legsdnf = 0
+wpndmg = 0
+
+#enemy stuff
+enhp = 0
+enmaxhp = 0
+endfn = 0
+enmaxdfn = 0
+endmg = 0
+enmp = 0
+enmaxmp = 0
 
 # All of the defines
 def clear():
@@ -55,13 +88,59 @@ def main():
     pass
 
 def login():
-    pass
+    global name, xp, maxxp, level, dmg, hp, maxhp, dfn, maxdfn, luck, mp, maxmp, helm, chest, legs, wpn, helmdfn, chestdfn, legsdnf, wpndmg
+    with open('save.xyz', 'r') as file:
+        name, xp, maxxp, level, dmg, hp, maxhp, dfn, maxdfn, luck, mp, maxmp, helm, chest, legs, wpn, helmdfn, chestdfn, legsdnf, wpndmg = file.read().split(',')
+        name = str(name)
+        xp = int(xp)
+        maxxp = int(maxxp)
+        level = int(level)
+        dmg = int(dmg)
+        hp = int(hp)
+        maxhp = int(maxhp)
+        dfn = int(dfn)
+        maxdfn = int(maxdfn)
+        luck = int(luck)
+        mp = int(mp)
+        maxmp = int(maxmp)
+        helm = str(helm)
+        chest = str(chest)
+        legs = str(legs)
+        wpn = str(wpn)
+        helmdfn = int(helmdfn)
+        chestdfn = int(chestdfn)
+        legsdnf = int(legsdnf)
+        wpndmg = int(wpndmg)
+    main()
 
 def signup():
-    pass
+    global name, xp, maxxp, level, dmg, hp, maxhp, dfn, maxdfn, luck, mp, maxmp, helm, chest, legs, wpn, helmdfn, chestdfn, legsdnf, wpndmg
+    name = input("Enter your character name: ")
+    xp = 0
+    maxxp = 10
+    level = 1
+    dmg = 5
+    hp = 20
+    maxhp = 20
+    dfn = 0
+    maxdfn = 0
+    luck = 0
+    mp = 10
+    maxmp = 10
+    helm = 0
+    chest = 0
+    legs = 0
+    wpn = 0
+    helmdfn = 0
+    chestdfn = 0
+    legsdnf = 0
+    wpndmg = 0
+    save()
+    main()
 
 def save():
-    pass
+    with open('save.xyz', 'w') as file:
+        file.write(f"{name},{xp},{maxxp},{level},{dmg},{hp},{maxhp},{dfn},{maxdfn},{luck},{mp},{maxmp},{helm},{chest},{legs},{wpn},{helmdfn},{chestdfn},{legsdnf},{wpndmg}")
 
 def loading():
     if randamt != 0:
@@ -81,7 +160,4 @@ def loading():
         s(.2)
         randamt = randamt - 1
 
-
 lsn()
-
-
