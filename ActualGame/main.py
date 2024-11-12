@@ -33,14 +33,8 @@ endmg = 0
 
 # All of the defines
 def clear():
-    # for windows
-    if name == 'nt':
-        _ = system('cls')
-    # for mac and linux(here, os.name is 'posix')
-    elif name == 'posix':
-        _ = system('clear')
-    else:
-        _ = system('cls')
+ os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def logo():
     clear()
@@ -60,13 +54,13 @@ def logo():
 
 def lsn():
     logo()
-    userinp = int(input("Have you played before (Do you have save data) Yes (1) or No (2): "))
-    if userinp == 1:
+    userinp = input("Have you played before (Do you have save data) Yes (1) or No (2): ")
+    if userinp == "1":
         print("Loging in...")
         s(2)
         loading()
         login()
-    elif userinp == 2:
+    elif userinp == "2":
         print("Lets get you signed up!")
         s(2)
         loading()
@@ -78,12 +72,12 @@ def lsn():
 
 def hub():
     logo()
-    userinp = int(input("Welcome to CMD RPG! please type '1' to open the command list! (or type 99 to close the game.): "))
+    userinp = input("Welcome to CMD RPG! please type '1' to open the command list! (or type 99 to close the game.): ")
 
     #all of the if's
-    if userinp == 1:
+    if userinp == "1":
         selectionmenu()
-    elif userinp == 99:
+    elif userinp == "99":
         print("Cya")
         s(1)
         clear()
@@ -159,19 +153,19 @@ def loading():
 def selectionmenu():
     logo()
     print(f"-------------\nSelection Menu\n---------------\n1. Closes the selection menu\n2. Opens the game\n3. Opens the Stats Menu\n4. Saves Your Game.\n5. [doesnt exist]")
-    userinp = int(input("Selection Menu: "))
+    userinp = input("Selection Menu: ")
 
     #ifs
-    if userinp == 1:
+    if userinp == "1":
         loading()
         hub()
-    elif userinp == 2:
+    elif userinp == "2":
         loading()
         gamelist()
-    elif userinp == 3:
+    elif userinp == "3":
         loading()
         stats()
-    elif userinp == 4:
+    elif userinp == "4":
         save()
         print("Game Saved")
         s(2)
@@ -245,7 +239,6 @@ def gamelist():
 
     if userinp == "1":
         dive()
-        break
     
     if userinp == "2":
         gamestats()
@@ -280,7 +273,9 @@ def war():
     clear()
     logo()
 
-    # Initialize enemy stats
+    # Reset and initialize enemy stats
+    endmg = 0
+    enhp = 0
     eh = 0
     hdmg = 0
     ph = 0
@@ -312,8 +307,8 @@ def war():
             dfn = maxdfn
             xp = xp + gxp
             
-            # Level up check
-            if xp >= maxxp:
+            # Enhanced level up check that repeats until all XP is processed
+            while xp >= maxxp:
                 xp = xp - maxxp
                 maxxp = int(maxxp * 1.25)
                 level = level + 1
@@ -331,6 +326,7 @@ def war():
     # Main combat loop
     while enhp > 0 and hp > 0:
         runz()
+
 
         
 
