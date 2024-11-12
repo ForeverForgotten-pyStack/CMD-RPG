@@ -37,8 +37,10 @@ def clear():
     if name == 'nt':
         _ = system('cls')
     # for mac and linux(here, os.name is 'posix')
-    else:
+    elif name == 'posix':
         _ = system('clear')
+    else:
+        _ = system('cls')
 
 def logo():
     clear()
@@ -270,9 +272,8 @@ def war():
     global endmg, enhp, el, xp, maxxp, stp, maxhp, maxdfn, dmg, dfn, hp, dmg, usedheal, useddfn, useddmg, level, gxp
 
     logo()
-    
     print("Now what level do you want the enemy to be?")
-    el = int(input("------------------------------\nAction Menu: "))
+    el = int(input("-------------------------------------------\nAction Menu: "))
     print("Now lets see how long you can last. Good luck.")
     s(1)
     clear()
