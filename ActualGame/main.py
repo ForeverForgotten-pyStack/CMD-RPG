@@ -245,6 +245,7 @@ def gamelist():
 
     if userinp == "1":
         dive()
+        break
     
     if userinp == "2":
         gamestats()
