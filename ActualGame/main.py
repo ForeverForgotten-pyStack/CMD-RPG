@@ -21,33 +21,15 @@ maxhp = 0
 usedheal = 0
 dfn = 0
 maxdfn = 0
-luck = 0
-mp = 0
-maxmp = 0
 stp = 0
 useddfn = 0
 usedmp = 0
 useddmg = 0
-usedluck = 0
-
-#Your inventory and equips
-helm = 0
-chest = 0
-legs = 0
-wpn = 0
-helmdfn = 0
-chestdfn = 0
-legsdnf = 0
-wpndmg = 0
 
 #enemy stuff
 enhp = 0
 enmaxhp = 0
-endfn = 0
-enmaxdfn = 0
 endmg = 0
-enmp = 0
-enmaxmp = 0
 
 # All of the defines
 def clear():
@@ -61,15 +43,15 @@ def clear():
 def logo():
     clear()
     print("\n\n")
-    print("[notloaded]")
-    print("[notloaded]")
-    print("[notloaded]")
-    print("[notloaded]")
-    print("[notloaded]")
-    print("[notloaded]")
-    print("[notloaded]")
-    print("[notloaded]")
-    print("[notloaded]")
+    print("  ______   __       __  _______         _______   _______    ______  ")
+    print(" /      \ |  \     /  \|       \       |       \ |       \  /      \ ")
+    print("|  $$$$$$\| $$\   /  $$| $$$$$$$\      | $$$$$$$\| $$$$$$$\|  $$$$$$\")
+    print("| $$   \$$| $$$\ /  $$$| $$  | $$      | $$__| $$| $$__/ $$| $$ __\$$")
+    print("| $$      | $$$$\  $$$$| $$  | $$      | $$    $$| $$    $$| $$|    \")
+    print("| $$   __ | $$\$$ $$ $$| $$  | $$      | $$$$$$$\| $$$$$$$ | $$ \$$$$")
+    print("| $$__/  \| $$ \$$$| $$| $$__/ $$      | $$  | $$| $$      | $$__| $$")
+    print(" \$$    $$| $$  \$ | $$| $$    $$      | $$  | $$| $$       \$$    $$")
+    print("  \$$$$$$  \$$      \$$ \$$$$$$$        \$$   \$$ \$$        \$$$$$$ ")
     print("\n\n")
 
 def lsn():
@@ -92,7 +74,7 @@ def lsn():
 
 def hub():
     logo()
-    userinp = int(input("Welcome to textbasedrpg! please type '1' to open the command list! (or type 99 to close the game.): "))
+    userinp = int(input("Welcome to CMD RPG! please type '1' to open the command list! (or type 99 to close the game.): "))
 
     #all of the if's
     if userinp == 1:
@@ -108,9 +90,9 @@ def hub():
         hub()
     
 def login():
-    global name, xp, maxxp, stp, level, dmg, hp, maxhp, usedheal, dfn, maxdfn, luck, mp, maxmp, helm, chest, legs, wpn, helmdfn, chestdfn, legsdnf, wpndmg, useddfn, usedmp, useddmg, usedluck
+    global name, xp, maxxp, stp, level, dmg, hp, maxhp, usedheal, dfn, maxdfn, luck, mp, maxmp, useddfn, usedmp, useddmg
     with open('svc.xyz', 'r') as file:
-        name, xp, maxxp, stp, level, dmg, hp, maxhp, usedheal, dfn, maxdfn, luck, mp, maxmp, helm, chest, legs, wpn, helmdfn, chestdfn, legsdnf, wpndmg, useddfn, usedmp, useddmg, usedluck = file.read().split(',')
+        name, xp, maxxp, stp, level, dmg, hp, maxhp, usedheal, dfn, maxdfn, useddfn, useddmg = file.read().split(',')
         name = str(name)
         xp = int(xp)
         maxxp = int(maxxp)
@@ -122,60 +104,36 @@ def login():
         usedheal = int(usedheal)
         dfn = int(dfn)
         maxdfn = int(maxdfn)
-        luck = int(luck)
-        mp = int(mp)
-        maxmp = int(maxmp)
-        helm = str(helm)
-        chest = str(chest)
-        legs = str(legs)
-        wpn = str(wpn)
-        helmdfn = int(helmdfn)
-        chestdfn = int(chestdfn)
-        legsdnf = int(legsdnf)
-        wpndmg = int(wpndmg)
         useddfn = int(useddfn)
         usedmp = int(usedmp)
         useddmg = int(useddmg)
-        usedluck = int(usedluck)
         s(.1)
         print(name)
         s(.5)
     hub()
 
 def signup():
-    global name, xp, maxxp, stp, level, dmg, hp, maxhp, dfn, maxdfn, luck, mp, maxmp, helm, chest, legs, wpn, helmdfn, chestdfn, legsdnf, wpndmg, useddfn, usedmp, useddmg, usedluck
+    global name, xp, maxxp, stp, level, dmg, hp, maxhp, dfn, maxdfn, useddfn, useddmg
     name = input("Enter your character name: ")
     xp = 0
     maxxp = 10
-    stp = 69
+    stp = 5
     level = 1
     dmg = 5
     hp = 20
     maxhp = 20
     dfn = 0
     maxdfn = 0
-    luck = 0
-    mp = 10
-    maxmp = 10
-    helm = 0
-    chest = 0
-    legs = 0
-    wpn = 0
-    helmdfn = 0
-    chestdfn = 0
-    legsdnf = 0
-    wpndmg = 0
     usedheal = 0
     useddfn = 0
     usedmp = 0
     useddmg = 0
-    usedluck = 0
     save()
     hub()
 
 def save():
     with open('svc.xyz', 'w') as file:
-        file.write(f"{name},{xp},{maxxp},{stp},{level},{dmg},{hp},{maxhp},{usedheal},{dfn},{maxdfn},{luck},{mp},{maxmp},{helm},{chest},{legs},{wpn},{helmdfn},{chestdfn},{legsdnf},{wpndmg},{useddfn},{usedmp},{useddmg},{usedluck}")
+        file.write(f"{name},{xp},{maxxp},{stp},{level},{dmg},{hp},{maxhp},{usedheal},{dfn},{maxdfn},{useddfn},{useddmg}")
 
 def loading():
     randamt = 0
@@ -196,15 +154,18 @@ def loading():
 
 def selectionmenu():
     logo()
-    print(f"-------------\nSelection Menu\n---------------\n1. Closes the selection menu\n2. Opens the game\n3. Opens the Stats Menu\n4. Saves You're Game.\n5. [doesnt exist]")
+    print(f"-------------\nSelection Menu\n---------------\n1. Closes the selection menu\n2. Opens the game\n3. Opens the Stats Menu\n4. Saves Your Game.\n5. [doesnt exist]")
     userinp = int(input("Selection Menu: "))
 
     #ifs
     if userinp == 1:
+        loading()
         hub()
     elif userinp == 2:
-        game()
+        loading()
+        gamelist()
     elif userinp == 3:
+        loading()
         stats()
     elif userinp == 4:
         save()
@@ -215,24 +176,21 @@ def selectionmenu():
         print("That does not exist, Sorry.")
         s(2)
         selectionmenu()
-
-def game():
-    pass
-
+    
 def stats():
     logo()
-    print(f"-------------------\nStats\n-------------------\nName: {name}\nLevel: {level} ({xp}/{maxxp})\nHealth {hp}/{maxhp}\nDefence: {dfn}/{maxdfn}\nMana: {mp}/{maxmp}\nDamage: {dmg}\nLuck: {luck}\n-------------------\nUnused Stat Points: {stp}\n-------------------\n")
-    userinp = int(input("Use Your statpoints (1) or Leave the Menu (2): "))
-    if userinp == 1:
+    print(f"-------------------\nStats\n-------------------\nName: {name}\nLevel: {level} ({xp}/{maxxp})\nHealth {hp}/{maxhp}\nDefence: {dfn}/{maxdfn}\nDamage: {dmg}\n-------------------\nUnused Stat Points: {stp}\n-------------------\n")
+    userinp = input("Use Your statpoints (1) or Leave the Menu (2): ")
+    if userinp == "1":
         stlvl()
     else:
         hub()
 
 def stlvl():
-    global stp, maxhp, maxdfn, maxmp, dmg, luck, usedheal, useddfn, usedmp, useddmg, usedluck
+    global stp, maxhp, maxdfn, dmg, usedheal, useddfn, usedmp, useddmg
     save()
     logo()
-    print(f"-------------------\nLevel Up Your Stats\n-------------------\n1. HP {maxhp}\n2. Defence {maxdfn}\n3. Mana {maxmp}\n4. Damage {dmg}\n5. Luck {luck}\n-------------------\nRemaining Statpoints: {stp}\n-------------------")
+    print(f"-------------------\nLevel Up Your Stats\n-------------------\n1. HP {maxhp}\n2. Defence {maxdfn}\n3. Damage {dmg}\n-------------------\nRemaining Statpoints: {stp}\n-------------------")
     
     if stp > 0:
         userinp = input("Type a Number (1-5) to increase a stat or type (99) to exit: ")
@@ -249,22 +207,11 @@ def stlvl():
             maxdfn = int(maxdfn + (1 * (useddfn/2)))
             stlvl()
 
-        elif userinp == "3":
-            stp = stp - 1
-            usedmp = usedmp + 1
-            maxmp = int(maxmp + (1 * (usedmp/2)))
-            stlvl()
 
-        elif userinp == "4":
+        elif userinp == "3":
             stp = stp - 1
             useddmg = useddmg + 1
             dmg = int(dmg + (1 * (useddmg/2)))
-            stlvl()
-
-        elif userinp == "5":
-            stp = stp - 1
-            usedluck = usedluck + 1
-            luck = int(luck + (1 * (usedluck/2)))
             stlvl()
 
         elif userinp == "99":
@@ -280,5 +227,132 @@ def stlvl():
         print("type anything to contenue")
         userinp = input("")
         stats()
+
+
+
+#This is where the actual game will be located, all the fighting stuff will be here
+
+
+        
+def gamelist():
+    logo()
+    print(f"------------------------------\nLocations/Actions to Begin (type the number)\n------------------------------\n1. Dive In\n2. Stats\n3. Quit Back To Menu")
+    userinp = input("------------------------------\nAction Menu: ")
+
+    if userinp == "1":
+        dive()
+    
+    if userinp == "2":
+        gamestats()
+    
+    if userinp == "3":
+        hub()
+    else:
+        print("That isnt a working command. trying again...")
+        s(1)
+        gamelist()
+
+def gamestats():
+    logo()
+    print(f"-------------------\nStats\n-------------------\nName: {name}\nLevel: {level} ({xp}/{maxxp})\nHealth {hp}/{maxhp}\nDefence: {dfn}/{maxdfn}\nDamage: {dmg}\n-------------------\nUnused Stat Points: {stp}\n-------------------\n")
+    userinp = input("Once your ready type anything to exit: ")
+    gamelist()
+
+def dive():
+    logo()
+    print("Now before you begin, the fights are INSTANT, you cannot heal or anything like that. DEATH WILL WIPE YOUR SAVE")
+    s(2)
+    war()
+
+def war():
+    global endmg, enhp, el, xp, maxxp, stp, maxhp, maxdfn, dmg, dfn, hp, dmg, usedheal, useddfn, useddmg, level, gxp
+
+    logo()
+    
+    print("Now what level do you want the enemy to be?")
+    el = int(input("------------------------------\nAction Menu: "))
+    print("Now lets see how long you can last. Good luck.")
+    s(1)
+    clear()
+    logo()
+
+    # Initialize enemy stats
+    eh = 0
+    hdmg = 0
+    ph = 0
+    gxp = 0
+
+    # Calculate enemy stats based on level
+    endmg = endmg + (2 + int(el/.5))
+    enhp = enhp + (5 + int(el/.5))
+
+    def runz():
+        global endmg, enhp, el, xp, maxxp, stp, maxhp, maxdfn, dmg, dfn, hp, dmg, usedheal, useddfn, useddmg, level, gxp
+
+        if enhp > 0 and hp > 0:
+            # Enemy attack
+            eh = r.randint(1, endmg) - dfn
+            dfn = dfn - eh
+            hp = hp - eh
+
+            # Player attack
+            hdmg = int(dmg * .5)
+            ph = r.randint(hdmg, dmg)
+            gxp = gxp + 1 + int(ph/5)
+            enhp = enhp - ph
+
+        # Victory condition
+        if enhp <= 0 and hp > 0:
+            print(f"You won with {hp}/{maxhp} remaining and gained {gxp} XP!")
+            hp = maxhp
+            dfn = maxdfn
+            xp = xp + gxp
+            
+            # Level up check
+            if xp >= maxxp:
+                xp = xp - maxxp
+                maxxp = int(maxxp * 1.25)
+                level = level + 1
+                stp = stp + 1
+                print(f"Level up! You now have {stp} Status Points for use!")
+            
+            s(2)
+            save()
+            gamelist()
+
+        # Defeat condition
+        if hp <= 0:
+            savewipe()
+
+    # Main combat loop
+    while enhp > 0 and hp > 0:
+        runz()
+
+        
+
+def savewipe():
+    global endmg, enhp, el, xp, maxxp, stp, maxhp, maxdfn, dmg, dfn, hp, dmg, usedheal, useddfn, useddmg, level, gxp
+    print("You died... wiping your save, sorry.")
+    xp = 0
+    maxxp = 10
+    stp = 5
+    level = 1
+    dmg = 5
+    hp = 20
+    maxhp = 20
+    dfn = 0
+    maxdfn = 0
+    usedheal = 0
+    useddfn = 0
+    usedmp = 0
+    useddmg = 0
+    save()
+    s(1)
+    hub()
+
+
+
+
+
 
 lsn()
