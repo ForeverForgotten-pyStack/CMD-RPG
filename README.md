@@ -3,9 +3,9 @@ This game is being solely developed by me (Forever_Forgotten)! so i hope you enj
 
 ### How to install
 
-	Download ALL of the packages in this github repo (Linked below!)
+	Download ALL of the packages in this github repo (Explained Below)
 
-<a href="textbasedrpg/ActualGame" id="download-link">Download File</a>
+
 
 Once downloaded, Follow all of the instructions in the-how-toos.txt file.
 
