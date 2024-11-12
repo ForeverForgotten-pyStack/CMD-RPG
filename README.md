@@ -5,7 +5,7 @@ This game is being solely developed by me (Forever_Forgotten)! so i hope you enj
 
 	Download ALL of the packages in this github repo (Linked below!)
 
-<a href="path/to/your/file.pdf" id="download-link">Download File</a>
+<a href="textbasedrpg/ActualGame" id="download-link">Download File</a>
 
 Once downloaded, Follow all of the instructions in the-how-toos.txt file.
 
