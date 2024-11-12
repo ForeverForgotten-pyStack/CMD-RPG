@@ -4,22 +4,13 @@ This game is being solely developed by me (Forever_Forgotten)! so i hope you enj
 ### How to install
 
 	Download ALL of the packages in this github repo (Explained Below)
+ 	YOU MUST HAVE PYTHON INSTALLED. 
+ 
 
 [Download it using this link!](https://drive.google.com/uc?export=download&id=1OJsfJAd3vJrtFufUcAZiKN0HjBdpWhFX)
 
-Once downloaded, Follow all of the instructions in the-how-toos.txt file.
+Once downloaded, Look for a folder called "Actual Game" and inside of that run 'run.cmd' as administrator.
 
- ## Todo List
-
-### Main tasks
-	1. Begin coding the actual game
-	2. inside of the files create a functioning user_inp() script
-	3. create lore and allat
-	4. create a save/load func with writeable files
-	5. create the .exe to run the game
-
-### Extra stuff for later
-	1. Publishing and allat
-	2. copyrighting this game so it cant become exsessive freeware
-	3. create some art for it
-	4. have fun
+## How to play
+	You play buy diving into the depths to fight enemys, the enemys levels are decided by you. the higher the risk the higher the reward.
+ 	on start type in '2' to create your account, there isnt any hidden dev file on it for you to snoop around in so ye, and if you wonder where your save file is, i didnt ask, find it and curropt it yourself.
