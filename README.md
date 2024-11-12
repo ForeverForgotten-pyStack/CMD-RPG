@@ -7,7 +7,7 @@ This game is being solely developed by me (Forever_Forgotten)! so i hope you enj
  	YOU MUST HAVE PYTHON INSTALLED. 
  
 
-[Click Me To Install the .zip](https://drive.google.com/uc?export=download&id=1AZjyfGu72VrYuvZLNVA6FuqY9A6ddD2U)
+[Click Me To Install the .zip](https://drive.google.com/uc?export=download&id=1-VMtUkUYwtlfb30uCv60zQiI6b9BYkZY)
 
 Once downloaded, Look for a folder called "Actual Game" and inside of that run 'run.cmd' as administrator.
 #### IF YOU ARE GOING TO USE run.cmd LEAVE IT IN THE FOLDER. DO NOT CHANGE THE LOCATION OF ANY CODE.
