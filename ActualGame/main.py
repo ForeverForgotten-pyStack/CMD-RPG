@@ -69,7 +69,8 @@ def signup():
     name = input("Enter your character name: ")
     xp = 0
     maxxp = 10
-    stp = level = 5
+    stp = 0
+    level = 1
     dmg = 5
     hp = maxhp = 20
     dfn = maxdfn = usedheal = useddfn = usedmp = useddmg = 0
@@ -141,7 +142,7 @@ def stlvl():
         # Display current stats and menu
         print(f"-------------------\nLevel Up Your Stats\n-------------------")
         print(f"1. HP {maxhp}\n2. Defence {maxdfn}\n3. Damage {dmg}")
-        print(f"-------------------\nRemaining Statpoints: {stp}\n-------------------")
+        print(f"---------------\nRemaining Statpoints: {stp}\n---------------")
         print("\nPress Enter to return to stats menu")
         
         if stp > 0:  # Check for available points
