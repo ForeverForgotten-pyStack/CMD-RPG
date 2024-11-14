@@ -8,7 +8,7 @@ This game is being solely developed by me (Forever_Forgotten)! so i hope you enj
   if python is not installed click [here](https://www.python.org/downloads/release/python-3130/) to install it, download it as admin and check all of the boxes 
  
 
-[Click Me To Install the .zip]()
+[Click Me To Install the .zip](https://github.com/ForeverForgotten-pyStack/CMD-RPG/releases)
 
 Once downloaded, Look for a folder called "Actual Game" and inside of that run 'run.cmd' as administrator.
 #### IF YOU ARE GOING TO USE run.cmd LEAVE IT IN THE FOLDER. DO NOT CHANGE THE LOCATION OF ANY CODE.
