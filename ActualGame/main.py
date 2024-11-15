@@ -69,7 +69,7 @@ def signup():
     name = input("Enter your character name: ")
     xp = 0
     maxxp = 10
-    stp = 0
+    stp = 5
     level = 1
     dmg = 5
     hp = maxhp = 20
@@ -219,7 +219,7 @@ def war():
             logo()
             hdmg = int(dmg * .5)
             ph = r.randint(hdmg, dmg)
-            round_xp = int((ph/3)/enhp + (el/2))
+            round_xp = int(1 + (ph/3) + (el/2))
             gxp += round_xp
             enhp -= ph
             print(f"Round {round_num} - Your Attack!")
@@ -273,7 +273,7 @@ def war():
     xp += gxp
     while xp >= maxxp:
         xp -= maxxp
-        maxxp = int((maxxp * 1.15) + (level * 8.5))
+        maxxp = int((maxxp * 1.15) + (level * 0.5))
         level += 1
         stp += 1
         print(f"Level up! {stp} Status Points available!")
@@ -287,7 +287,8 @@ def savewipe():
     print("Game Over - Save wiped")
     xp = 0
     maxxp = 10
-    stp = level = 5
+    stp = 5
+    level = 1
     dmg = 5
     hp = maxhp = 20
     dfn = maxdfn = usedheal = useddfn = usedmp = useddmg = 0
