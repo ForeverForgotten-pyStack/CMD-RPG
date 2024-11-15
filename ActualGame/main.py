@@ -163,21 +163,21 @@ def stlvl():
                         if statsel == "1":
                             stp -= 1
                             usedheal += 1
-                            maxhp = int(maxhp + (2 * usedheal * 0.25) + (maxhp * 0.1))
+                            maxhp = int(1 + maxhp + (2 * usedheal * 0.25) + (maxhp * 0.1))
                             statamt -= 1
                             
                         # Defense scaling - balanced for steady growth
                         elif statsel == "2":
                             stp -= 1
                             useddfn += 1
-                            maxdfn = int(maxdfn + (1 * useddfn * 0.15) + (maxdfn * 0.08))
+                            maxdfn = int(1 + maxdfn + (1 * useddfn * 0.15) + (maxdfn * 0.08))
                             statamt -= 1
                             
                         # Damage scaling - aggressive growth for offensive focus
                         elif statsel == "3":
                             stp -= 1
                             useddmg += 1
-                            dmg = int(dmg + (1 * useddmg * 0.2) + (dmg * 0.12))
+                            dmg = int(1 + dmg + (1 * useddmg * 0.2) + (dmg * 0.12))
                             statamt -= 1
                     
                     save()  # Save after spending points
@@ -291,7 +291,8 @@ def savewipe():
     level = 1
     dmg = 5
     hp = maxhp = 20
-    dfn = maxdfn = usedheal = useddfn = usedmp = useddmg = 0
+    dfn = maxdfn = 1
+    usedheal = useddfn = usedmp = useddmg = 0
     save()
     hub()
 
